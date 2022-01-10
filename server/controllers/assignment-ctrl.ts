@@ -56,9 +56,9 @@ export const updateAssignment = async (req: any, res: any) => {
       );
 
     if (!assignment) {
-      return res.status(400).json({
+      return res.status(404).json({
         success: false,
-        Message: 'Assignment not found.',
+        message: 'Assignment not found.',
       });
     }
 
@@ -98,7 +98,7 @@ export const getAssignmentById = async (req: any, res: any) => {
     if (!assignment) {
       return res
         .status(404)
-        .json({ success: false, error: 'Assignment not found' });
+        .json({ success: false, message: 'Assignment not found' });
     }
 
     return res.status(200).json({ success: true, data: assignment });

@@ -13,5 +13,9 @@ router.get('/assignments', assignmentCtrl.getAssignments);
 
 // Class
 router.post('/class', classCtrl.createClass);
+router.put('/class/:id', classCtrl.updateClass);
+router.delete('/class/:id', classCtrl.deleteClass);
+router.get('/class/:id', classCtrl.getClassById);
+router.get('/classes', classCtrl.getClasses);
 
 export default router;
