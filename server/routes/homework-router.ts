@@ -8,6 +8,8 @@ const router = Router();
 router.post('/assignment', assignmentCtrl.createAssignment);
 router.put('/assignment/:id', assignmentCtrl.updateAssignment);
 router.delete('/assignment/:id', assignmentCtrl.deleteAssignment);
+router.get('/assignment/:id', assignmentCtrl.getAssignmentById);
+router.get('/assignments', assignmentCtrl.getAssignments);
 
 // Class
 router.post('/class', classCtrl.createClass);
