@@ -1,26 +1,26 @@
-import {Schema, model} from 'mongoose';
+import { Schema, model, Document } from "mongoose";
 
-interface Assignment {
-    name: string,
-    due_date: Date,
-    class: Schema.Types.ObjectId,
-    total_points?: number,
-    points_received?: number,
+export interface Assignment extends Document {
+  name: string;
+  due_date: Date;
+  class: Schema.Types.ObjectId;
+  total_points?: number;
+  points_received?: number;
 }
 
 const schema = new Schema<Assignment>(
-    {
-        name: {type: String, required: true},
-        due_date: {type: Date, required: true},
-        class: {
-            type: Schema.Types.ObjectId,
-            required: true,
-            ref: 'Class'
-        },
-        total_points: {type: Number},
-        points_received: {type: Number}
+  {
+    name: { type: String, required: true },
+    due_date: { type: Date, required: true },
+    class: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: "Class",
     },
-    {timestamps: true},
+    total_points: { type: Number },
+    points_received: { type: Number },
+  },
+  { timestamps: true }
 );
 
-export default model('assignments', schema);
+export const AssignmentModel = model<Assignment>("assignments", schema);
