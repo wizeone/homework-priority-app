@@ -1,1 +1,4 @@
-import React from 'react';
+import ClassesList from './ClassesList';
+import AssignmentsList from './AssignmentsList';
+
+export { ClassesList, AssignmentsList };
